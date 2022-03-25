@@ -7,13 +7,10 @@ const customerInput = document.querySelector('#controls > input');
 const creatingBoxesButton = document.querySelector('[data-create]');
 const destroyingBoxesButton = document.querySelector('[data-destroy]');
 
-
-customerInput.addEventListener("input", () => {
-  const amountOfBoxes = customerInput.value;
-  creatingBoxesButton.addEventListener("click", () => {
-    createBoxes(amountOfBoxes);
+creatingBoxesButton.addEventListener("click", () => {
+   const amountOfBoxes = customerInput.value;
+   createBoxes(amountOfBoxes);
   });
-})
 
 destroyingBoxesButton.addEventListener("click", destroyBoxes);
 
@@ -35,5 +32,6 @@ function createBoxes(amount) {
 
 function destroyBoxes() {
   boxesContainer.innerHTML = "";
+  customerInput.value = "";
 }
 
