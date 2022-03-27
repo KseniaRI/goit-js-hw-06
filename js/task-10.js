@@ -14,10 +14,12 @@ creatingBoxesButton.addEventListener("click", () => {
 
 destroyingBoxesButton.addEventListener("click", destroyBoxes);
 
+let boxWidth = 30;
+let boxHeight = 30;
+ 
 function createBoxes(amount) {
   let boxesArray = [];
-  let boxWidth = 30;
-  let boxHeight = 30;
+  
   for (let i = 1; i <= amount; i += 1){
     const box = document.createElement("div");
     box.style.width = `${boxWidth}px`;
@@ -27,11 +29,14 @@ function createBoxes(amount) {
     boxWidth += 10;
     boxHeight += 10;
   }
+ 
   boxesContainer.append(...boxesArray);
 }
 
 function destroyBoxes() {
   boxesContainer.innerHTML = "";
   customerInput.value = "";
+  boxWidth = 30;
+  boxHeight = 30;
 }
 
